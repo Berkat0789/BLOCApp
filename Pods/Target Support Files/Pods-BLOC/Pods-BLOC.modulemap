@@ -1,0 +1,6 @@
+framework module Pods_BLOC {
+  umbrella header "Pods-BLOC-umbrella.h"
+
+  export *
+  module * { export * }
+}
