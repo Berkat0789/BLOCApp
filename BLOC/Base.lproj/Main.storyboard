@@ -66,6 +66,9 @@
                                             <constraint firstAttribute="height" constant="44" id="qkD-dg-jUI"/>
                                         </constraints>
                                         <state key="normal" image="Login_btn"/>
+                                        <connections>
+                                            <action selector="LoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HzD-Hz-VHK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.15294117647058825" green="0.21176470588235294" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -99,6 +102,9 @@
                                 <state key="normal" title="Don't have an account? Create One!">
                                     <color key="titleColor" red="0.1529411765" green="0.21176470589999999" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="DontHaveaccountPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A5G-Yy-pAN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.4823529411764706" green="0.5725490196078431" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -113,10 +119,30 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="oQz-yb-WGc" id="aCq-Gj-CSI"/>
+                        <outlet property="passwordField" destination="dlH-VQ-Wjh" id="VpP-m6-V7Z"/>
+                        <outlet property="usernameField" destination="C8E-mx-ZcS" id="m5a-hx-ivS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="8yA-wW-Ab9">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="JdQ-eZ-95U" customClass="HomeVC" customModule="BLOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fyo-Wn-7Lt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="qT1-pd-PSz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1VA-ab-5X0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-182" y="815"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="wJy-dS-78D">
@@ -179,6 +205,9 @@
                                 <state key="normal" title="Already have an account? Sign In!">
                                     <color key="titleColor" red="0.15294117647058825" green="0.21176470588235294" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="AlreadyHaveaccountPressed:" destination="w0t-er-rxX" eventType="touchUpInside" id="XQa-8x-V9h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J99-WP-8Zc">
                                 <rect key="frame" x="67" y="429" width="240" height="44"/>
@@ -187,6 +216,9 @@
                                     <constraint firstAttribute="width" constant="240" id="Tv4-ll-thZ"/>
                                 </constraints>
                                 <state key="normal" image="Signup Button"/>
+                                <connections>
+                                    <action selector="signupPressed:" destination="w0t-er-rxX" eventType="touchUpInside" id="k30-cQ-eO8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.48327577114105225" green="0.57276254892349243" blue="0.46370875835418701" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -203,6 +235,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jSV-tg-R1B"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="XA8-kB-GOC" id="pgN-95-5wv"/>
+                        <outlet property="passwordField" destination="HaX-nS-rpO" id="GNd-nz-2rT"/>
+                        <outlet property="signUpButton" destination="J99-WP-8Zc" id="fOl-KB-hW2"/>
+                        <outlet property="usernameField" destination="M3V-6S-dNd" id="sh2-ge-vKl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nn-Lv-3RJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
