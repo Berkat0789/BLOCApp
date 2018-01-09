@@ -9,16 +9,24 @@
 import UIKit
 import Firebase
 
-class addPostVC: UIViewController {
+class addPostVC: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var descriptionLBL: UITextView!
     @IBOutlet weak var titlelbl: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        descriptionLBL.delegate = self
         addtapToDismissKeyboaed()
 
     }//--end view did load
+    
+//--Protocol Function
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        descriptionLBL.text = ""
+    }
+    
+//--Actions
     @IBAction func postPressed(_ sender: Any) {
         guard let title = titlelbl.text, titlelbl.text != "" else {return}
         guard let description = descriptionLBL.text, descriptionLBL.text != "" || descriptionLBL.text != "add  details here...." else {return}

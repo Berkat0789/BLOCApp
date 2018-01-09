@@ -7,29 +7,35 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }//-- end view did load
+    
+    
+//--Actions
+  
+    
+    @IBAction func logoutPressed(_ sender: Any) {
+        
+        let logoutView = UIAlertController(title: "Logout?", message: "Are you sure you want to logout?", preferredStyle: .alert)
+        let logoutAction = UIAlertAction(title: "Logout?", style: .destructive) { (logoutPressed) in
+            do {
+                try Auth.auth().signOut()
+                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
+                self.present(loginVC!, animated: true, completion: nil)
+            } catch {
+                print(error)
+            }
+        }
+        logoutView.addAction(logoutAction)
+        present(logoutView, animated: true, completion: nil)
+       
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

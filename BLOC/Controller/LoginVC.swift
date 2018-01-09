@@ -29,8 +29,8 @@ class LoginVC: UIViewController {
             if success {
                 AuthService.instance.LoginUser(email: email, Password: password, loginCompleted: { (success, error) in
                     if success {
-                       let homevc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
-                        self.present(homevc!, animated: true, completion: nil)
+                       let tabVC = self.storyboard?.instantiateViewController(withIdentifier: "tabVC")
+                        self.present(tabVC!, animated: true, completion: nil)
                     }
                 })
             }
