@@ -10,7 +10,7 @@ import UIKit
 
 class LoginVC: UIViewController {
 //--Outlets
-    @IBOutlet weak var usernameField: authTextField!
+    @IBOutlet weak var EmailField: authTextField!
     @IBOutlet weak var passwordField: authTextField!
     @IBOutlet weak var loginButton: UIButton!
     
@@ -22,10 +22,23 @@ class LoginVC: UIViewController {
     
 //--Actions
     @IBAction func LoginPressed(_ sender: Any) {
+        guard let email = EmailField.text, EmailField.text != "" else {return}
+        guard let password = passwordField.text, passwordField.text != "" else {return}
+        
+        DataService.instance.findUserbyEmail(Email: email) { (success) in
+            if success {
+                AuthService.instance.LoginUser(email: email, Password: password, loginCompleted: { (success, error) in
+                    if success {
+                       let homevc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
+                        self.present(homevc!, animated: true, completion: nil)
+                    }
+                })
+            }
+        }
     }
     @IBAction func DontHaveaccountPressed(_ sender: Any) {
-        let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC")
-        present(loginVC!, animated: true, completion: nil)
+        let signUpVC = storyboard?.instantiateViewController(withIdentifier: "signUpVC")
+        present(signUpVC!, animated: true, completion: nil)
     }
     
 //-ProtocolFunctions
